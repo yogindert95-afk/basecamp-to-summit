@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf7f1">
+<title>Book a call | Base Camp to Summit</title>
+<meta name="description" content="A 30-minute conversation — where you are, where you want to lead, and which climb fits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="min-height:100vh;display:flex;flex-direction:column">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Base Camp <span class="accent">to</span> Summit</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="the-trailhead.html">The Trailhead</a>
+        <a href="base-camp.html">Base Camp</a>
+        <a href="the-summit.html">The Summit</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ FORM ============ -->
+  <section style="flex:1;padding:5rem 40px">
+    <div style="max-width:1050px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start" class="call-grid">
+      <div>
+        <div class="kick" style="margin-bottom:1.1rem">The route starts here</div>
+        <h1 class="h1" style="font-size:clamp(2.2rem,4.4vw,3.4rem)">Book a call.</h1>
+        <p class="lead" style="max-width:400px;margin:1.4rem 0 0">A 30-minute conversation — where you are, where you want to lead, and which climb fits. No slides, no pressure.</p>
+        <div style="margin-top:2.2rem;display:flex;flex-direction:column;gap:.9rem">
+          <div style="display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--slate)"><span style="color:var(--rust)">▲</span> You'll hear back within one working day.</div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--slate)"><span style="color:var(--rust)">▲</span> Individuals, teams, and whole organisations welcome.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:28px;padding:2.2rem">
+        <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.7rem">Where are you on the climb?</div>
+        <div id="personas" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.4rem">
+          <button type="button" class="persona-chip on" data-p="Student / getting into corporate">Getting into corporate</button>
+          <button type="button" class="persona-chip" data-p="Aspiring or new manager">Aspiring / new manager</button>
+          <button type="button" class="persona-chip" data-p="Senior leader">Senior leader</button>
+          <button type="button" class="persona-chip" data-p="Building leaders in my organisation">My organisation</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px" class="name-row">
+          <input id="f-name" placeholder="Your name" autocomplete="name">
+          <input id="f-email" placeholder="Email" type="email" autocomplete="email">
+        </div>
+        <input id="f-org" placeholder="Organisation (optional)" style="margin-bottom:12px">
+        <textarea id="f-msg" placeholder="What would you like to work on?" rows="4" style="resize:vertical;margin-bottom:1.2rem"></textarea>
+        <button id="f-submit" class="btn btn-primary" type="button">Request the call</button>
+        <p id="f-sent" style="display:none;font-size:.92rem;color:#2e7d4f;margin:1rem 0 0">Your email app should have opened with the details — just hit send.</p>
+        <p style="font-size:.82rem;color:var(--mist);margin:1.2rem 0 0">Prefer email? Write to <a id="f-mail" href="#">loading…</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" style="padding:3rem 0">
+    <div class="wrap footer-row" style="border-top:none;padding-top:0;align-items:center">
+      <div class="footer-links">
+        <a href="the-trailhead.html">The Trailhead</a>
+        <a href="base-camp.html">Base Camp</a>
+        <a href="the-summit.html">The Summit</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">© 2026 Base Camp to Summit</div>
+    </div>
+  </footer>
+
+<style>
+  @media (max-width:920px){ .call-grid{grid-template-columns:1fr !important;gap:32px !important} }
+  @media (max-width:560px){ .name-row{grid-template-columns:1fr !important} }
+</style>
+<script src="js/site.js"></script>
+<script>
+(function () {
+  // Change this one line when the brand mailbox is live (e.g. hello@basecamptosummit.com)
+  var CONTACT_EMAIL = 'yogindert95@gmail.com';
+
+  var mail = document.getElementById('f-mail');
+  mail.textContent = CONTACT_EMAIL;
+  mail.href = 'mailto:' + CONTACT_EMAIL;
+
+  var persona = 'Student / getting into corporate';
+  var chips = document.querySelectorAll('.persona-chip');
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('on'); });
+      c.classList.add('on');
+      persona = c.getAttribute('data-p');
+    });
+  });
+
+  document.getElementById('f-submit').addEventListener('click', function () {
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var org = document.getElementById('f-org').value.trim();
+    var msg = document.getElementById('f-msg').value.trim();
+    var subject = encodeURIComponent('Call request — ' + persona + (name ? ' — ' + name : ''));
+    var body = encodeURIComponent(
+      'Where I am: ' + persona + '\n' +
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      (org ? 'Organisation: ' + org + '\n' : '') +
+      '\n' + msg);
+    window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+    document.getElementById('f-sent').style.display = 'block';
+  });
+})();
+</script>
+</body>
+</html>

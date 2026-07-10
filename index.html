@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf7f1">
+<title>Base Camp to Summit — Leadership development, taught like a climb</title>
+<meta name="description" content="Leadership programs from campus to corporate, first-time managers, and senior leaders — built by a practitioner who has enabled 1,600+ people leaders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  @keyframes cloudDrift{from{transform:translateX(-10vw)}to{transform:translateX(115vw)}}
+  @keyframes hintPulse{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+  @media (prefers-reduced-motion: reduce){.hm-cloud,#hm-trekker,#hm-flag,#hm-hint{animation:none !important}}
+</style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" style="position:fixed;left:0;right:0;top:0">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Base Camp <span class="accent">to</span> Summit</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="the-trailhead.html">The Trailhead</a>
+        <a href="base-camp.html">Base Camp</a>
+        <a href="the-summit.html">The Summit</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary btn-sm" href="book-a-call.html">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ SCROLL-EXPAND HERO ============ -->
+  <div id="hm-wrap" style="position:relative;height:calc(100vh + 820px)">
+    <div id="hm-stage" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#eef3f4">
+
+      <!-- pale backdrop that fades as the mountain expands -->
+      <div id="hm-bg" style="position:absolute;inset:0;opacity:1">
+        <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.65) brightness(1.08)">
+        <div style="position:absolute;inset:0;background:#eef3f4;opacity:.44"></div>
+        <svg viewBox="0 0 1440 780" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+          <polygon points="0,470 200,404 400,452 620,352 840,430 1040,352 1240,420 1440,372 1440,780 0,780" fill="#dce6e6" opacity=".82"></polygon>
+          <polygon points="0,580 240,516 460,560 700,480 940,536 1180,470 1440,528 1440,780 0,780" fill="#cbd8d8" opacity=".9"></polygon>
+        </svg>
+      </div>
+
+      <!-- expanding media: sky photo + illustrated ridge scene -->
+      <div id="hm-media" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:360px;height:462px;max-width:96vw;border:1px solid #e8e2d8;border-radius:28px;overflow:hidden;background:#eef3f4">
+        <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920&auto=format&fit=crop" alt="Mountain sky" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:saturate(.88) brightness(1.02)">
+        <svg viewBox="0 0 1440 780" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+          <polygon points="0,468 180,404 340,452 520,356 700,430 880,352 1060,420 1240,366 1440,428 1440,780 0,780" fill="#d3dfe0"></polygon>
+          <polygon points="0,566 220,498 420,544 620,466 820,522 1020,452 1240,520 1440,478 1440,780 0,780" fill="#b3c4c5"></polygon>
+          <polygon points="0,672 260,606 500,648 760,470 1000,636 1240,588 1440,624 1440,780 0,780" fill="#16323c"></polygon>
+          <polygon points="760,470 806,506 780,510 748,532 720,516 736,500" fill="#eef3f4" opacity=".92"></polygon>
+          <path d="M150,772 C300,730 340,700 470,676 C600,652 650,614 780,566 C900,522 1000,516 1080,492" fill="none" stroke="#c9d4d2" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"></path>
+          <path id="hm-trail" d="M150,772 C300,730 340,700 470,676 C600,652 650,614 780,566 C900,522 1000,516 1080,492" fill="none" stroke="#d96f32" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1200" stroke-dashoffset="1200">
+            <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="7s" begin="0.4s" fill="freeze"></animate>
+          </path>
+          <g id="hm-flag" transform="translate(1080,492)">
+            <line x1="0" y1="0" x2="0" y2="-26" stroke="#1f2a33" stroke-width="2.5"></line>
+            <polygon points="0,-26 22,-21 0,-14" fill="#d96f32" style="transform-origin:0px -20px;animation:flagWave 2.4s ease-in-out infinite"></polygon>
+          </g>
+          <g id="hm-trekker" style="animation:bob .9s ease-in-out infinite">
+            <g transform="translate(-4,-20)">
+              <circle cx="4" cy="0" r="4.5" fill="#1f2a33"></circle>
+              <rect x="-3" y="4" width="9" height="13" rx="3.5" fill="#d96f32"></rect>
+              <line x1="4" y1="17" x2="0" y2="27" stroke="#1f2a33" stroke-width="2.6" stroke-linecap="round"></line>
+              <line x1="4" y1="17" x2="9" y2="27" stroke="#1f2a33" stroke-width="2.6" stroke-linecap="round"></line>
+              <line x1="10" y1="8" x2="15" y2="24" stroke="#1f2a33" stroke-width="2" stroke-linecap="round"></line>
+            </g>
+            <animateMotion dur="16s" repeatCount="indefinite" rotate="0" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#hm-trail"></mpath>
+            </animateMotion>
+          </g>
+        </svg>
+        <div id="hm-scrim" style="position:absolute;inset:0;background:#16323c;opacity:0;pointer-events:none"></div>
+      </div>
+
+      <!-- drifting clouds -->
+      <div class="hm-cloud" style="position:absolute;top:14%;left:0;width:340px;height:62px;background:#fff;opacity:.3;border-radius:50%;filter:blur(13px);animation:cloudDrift 78s linear infinite;z-index:5;pointer-events:none"></div>
+      <div class="hm-cloud" style="position:absolute;top:26%;left:0;width:220px;height:44px;background:#fff;opacity:.24;border-radius:50%;filter:blur(11px);animation:cloudDrift 104s linear -30s infinite;z-index:5;pointer-events:none"></div>
+
+      <!-- splitting wordmark -->
+      <div id="hm-title-l" style="position:absolute;left:50%;top:44%;z-index:8;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.02em;color:#1f2a33;white-space:nowrap;transform:translate(calc(-50% - 196px),-50%);will-change:transform,opacity">Base Camp</div>
+      <div id="hm-title-r" style="position:absolute;left:50%;top:44%;z-index:8;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.02em;color:#1f2a33;white-space:nowrap;transform:translate(calc(-50% + 196px),-50%);will-change:transform,opacity"><span class="accent">to</span> Summit</div>
+
+      <!-- scroll hint -->
+      <div id="hm-hint" style="position:absolute;left:50%;bottom:42px;z-index:8;transform:translateX(-50%);text-align:center;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#4a5a66;animation:hintPulse 2.2s ease-in-out infinite">Scroll to climb<br><span style="font-size:1.1rem">↓</span></div>
+
+      <!-- settled hero content -->
+      <div id="hm-hero" style="position:absolute;left:0;right:0;bottom:0;z-index:9;padding:0 40px 9vh;opacity:0;pointer-events:none">
+        <div style="max-width:1150px;margin:0 auto">
+          <div style="max-width:760px">
+            <div style="font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8b48f;margin-bottom:1.1rem">Leadership, taught like a climb</div>
+            <h1 class="h1" style="color:#eef2ee">Every <span class="accent">climb</span> starts at base camp.</h1>
+            <p style="max-width:540px;font-size:1.12rem;line-height:1.6;color:#c9d4d2;margin:1.4rem 0 2rem">Most people are promoted for being great at the work — then left to figure out leading people on their own. We train that climb deliberately: from campus to corporate, through your first team, all the way to leading leaders.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="book-a-call.html">Book a call</a>
+              <a class="btn btn-dark-ghost" href="#climbs">See the climbs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHOOSE YOUR CLIMB ============ -->
+  <section id="climbs" class="sec" style="position:relative;z-index:10;background:var(--cream)">
+    <div class="wrap">
+      <div class="reveal" style="max-width:680px;margin-bottom:3.2rem">
+        <div class="kick">Where are you on the climb?</div>
+        <h2 class="h2">Three routes. One is yours.</h2>
+        <p class="lead" style="margin:1.2rem 0 0">Each program is built for one moment in a leader's climb — not a generic course stretched to fit everyone.</p>
+      </div>
+      <div class="grid-3">
+        <a href="the-trailhead.html" class="card reveal">
+          <div class="card-photo"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=70" alt="Students working together on laptops" loading="lazy"></div>
+          <div class="card-label">Students &amp; graduates · 2,860m</div>
+          <div class="card-title">The Trailhead</div>
+          <p class="quote">“My degree taught me the subject. Nobody taught me the job.”</p>
+          <p class="card-body">Campus to corporate: communication, ownership, and interviews-to-first-90-days — for students, fresh graduates, and the colleges preparing them.</p>
+          <span class="card-link">Start at The Trailhead →</span>
+        </a>
+        <a href="base-camp.html" class="card reveal">
+          <div class="card-photo"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=70" alt="A manager leading a team discussion at a whiteboard" loading="lazy"></div>
+          <div class="card-label">Aspiring &amp; new managers · 5,364m</div>
+          <div class="card-title">Base Camp</div>
+          <p class="quote">“I'm the one everyone counts on — and now I'm leading people with no training for it.”</p>
+          <p class="card-body">The whole first climb of leadership: for high performers about to lead, and managers in their first two years — where most of the falling happens.</p>
+          <span class="card-link">Set out from Base Camp →</span>
+        </a>
+        <a href="the-summit.html" class="card reveal">
+          <div class="card-photo"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=70" alt="Two senior professionals in a candid working conversation" loading="lazy"></div>
+          <div class="card-label">Senior leaders · 8,849m</div>
+          <div class="card-title">The Summit</div>
+          <p class="quote">“The problems got quieter and heavier — and honest feedback stopped reaching me a while ago.”</p>
+          <p class="card-body">For leaders of leaders: strategy, influence without authority, and building the managers who come after you.</p>
+          <span class="card-link">Go to The Summit →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO WE WORK WITH (buyer split) ============ -->
+  <section class="sec white bordered-top bordered-bottom" style="position:relative;z-index:10">
+    <div class="wrap">
+      <div class="reveal" style="max-width:680px;margin-bottom:3rem">
+        <div class="kick">Who we work with</div>
+        <h2 class="h2">Two ways to climb.</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal" style="background:var(--cream)">
+          <div class="card-label">For organisations</div>
+          <div class="card-title">Build your leadership bench.</div>
+          <p class="card-body">For HR &amp; L&amp;D heads, founders, and business leaders who keep promoting their best people into management — and watching them struggle. We run cohort programs inside your company: manager academies, promotion pipelines, and onboarding for new leaders, shaped to your context and tied to real promotion decisions.</p>
+          <p class="card-body" style="margin-bottom:1.4rem"><b style="color:var(--ink)">Typical engagements:</b> a 6-session academy for a cohort of 12–30, run over weeks — online, on-site, or blended.</p>
+          <a class="btn btn-primary" href="book-a-call.html">Talk about a cohort</a>
+        </div>
+        <div class="card reveal" style="background:var(--cream)">
+          <div class="card-label">For individuals</div>
+          <div class="card-title">Climb on your own rope.</div>
+          <p class="card-body">For the ambitious IC who wants the promotion, the new manager who's drowning quietly, or the senior leader who no longer gets honest feedback. Join an open cohort or work 1:1 — the same frameworks, applied directly to your team and your next six months.</p>
+          <p class="card-body" style="margin-bottom:1.4rem"><b style="color:var(--ink)">Typical engagements:</b> open cohorts by stage, or spaced 1:1 sessions across a quarter.</p>
+          <a class="btn btn-ghost" href="book-a-call.html">Find your route</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD (pine band + snowfall) ============ -->
+  <section id="method" class="sec pine" style="position:relative;z-index:10;overflow:hidden">
+    <div class="snowfield" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div class="wrap split" style="position:relative">
+      <div class="reveal">
+        <div class="kick">The method</div>
+        <h2 class="h2">Why we teach it as a climb.</h2>
+      </div>
+      <div class="reveal" style="max-width:480px">
+        <p style="font-size:1.08rem;line-height:1.7;color:#c9d4d2;margin:0 0 1.2rem">A climb has a shape everyone understands: you start low, you commit to a route, the middle is steep, and the summit is earned — not given. Leadership works the same way.</p>
+        <p style="font-size:1.08rem;line-height:1.7;color:#c9d4d2;margin:0">So we don't hand people frameworks and wish them luck. Every session is half teaching, half practice on your real team, your real decisions — so it works the next morning, not just in the workshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE GUIDE (trust teaser) ============ -->
+  <section class="sec" style="position:relative;z-index:10;background:var(--cream)">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:2.6rem;max-width:680px">
+        <div class="kick">Who's guiding</div>
+        <h2 class="h2">Built by the person who built the academies.</h2>
+        <p class="lead" style="margin:1.2rem 0 0">Yoginder “Yogi” Thakur designed the manager academies at Gartner that enabled <b style="color:var(--ink)">1,600+ people leaders</b>, earned his stripes in enterprise sales at NetApp, and is now Vice President at BlackRock. This isn't theory taught from a book — it's the same training large enterprises pay for, guided directly.</p>
+      </div>
+      <div class="grid-4">
+        <div class="stat-card reveal"><div class="stat-num" data-to="10" data-suffix="+">10+</div><div class="stat-label">years leading &amp; teaching</div></div>
+        <div class="stat-card reveal"><div class="stat-num" data-to="1600" data-suffix="+">1,600+</div><div class="stat-label">people leaders enabled</div></div>
+        <div class="stat-card reveal"><div class="stat-num" data-to="3">3</div><div class="stat-label">leadership academies built</div></div>
+        <div class="stat-card reveal"><div class="stat-num small">BlackRock · Gartner · NetApp</div><div class="stat-label">where the practice was earned</div></div>
+      </div>
+      <p class="footnote reveal"><a href="about.html">Meet the guide →</a></p>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="sec bordered-top" style="position:relative;z-index:10;background:var(--cream);overflow:hidden;padding-bottom:9rem">
+    <div class="wrap reveal" style="position:relative;z-index:2">
+      <div class="kick">Start the climb</div>
+      <h2 class="h2" style="font-size:clamp(2rem,4.4vw,3.2rem);max-width:640px;margin-bottom:1.8rem">Every summit begins with a single call.</h2>
+      <a class="btn btn-primary" href="book-a-call.html">Book a call</a>
+    </div>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:120px;display:block">
+      <polygon points="0,120 220,64 460,96 700,40 940,86 1180,52 1440,88 1440,120" fill="#e8e2d8"></polygon>
+    </svg>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" style="position:relative;z-index:10">
+    <div class="wrap">
+      <div class="footer-tag">Leadership development, taught like a climb.</div>
+      <div class="footer-row">
+        <div class="footer-links">
+          <a href="the-trailhead.html">The Trailhead</a>
+          <a href="base-camp.html">Base Camp</a>
+          <a href="the-summit.html">The Summit</a>
+          <a href="about.html">About</a>
+          <a href="book-a-call.html">Book a call</a>
+        </div>
+        <div class="footer-copy">© 2026 Base Camp to Summit</div>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/site.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var small = window.matchMedia('(max-width: 760px)').matches;
+  var wrap = document.getElementById('hm-wrap');
+  var media = document.getElementById('hm-media');
+  var bg = document.getElementById('hm-bg');
+  var scrim = document.getElementById('hm-scrim');
+  var titleL = document.getElementById('hm-title-l');
+  var titleR = document.getElementById('hm-title-r');
+  var hint = document.getElementById('hm-hint');
+  var hero = document.getElementById('hm-hero');
+  var EXTRA = 820;
+  var clamp = function (v, a, b) { return Math.min(Math.max(v, a), b); };
+
+  // Reduced-motion or small screens: land straight on the full hero.
+  if (reduce || small) {
+    wrap.style.height = '100vh';
+    media.style.width = '100vw';
+    media.style.height = '100vh';
+    media.style.borderRadius = '0';
+    media.style.borderColor = 'transparent';
+    media.style.maxWidth = 'none';
+    scrim.style.opacity = '0.4';
+    bg.style.opacity = '0';
+    titleL.style.display = 'none';
+    titleR.style.display = 'none';
+    hint.style.display = 'none';
+    hero.style.opacity = '1';
+    hero.style.pointerEvents = 'auto';
+    hero.style.padding = '0 24px 7vh';
+    return;
+  }
+
+  var vw = function () { return window.innerWidth; };
+  var vh = function () { return window.innerHeight; };
+  var startW = function () { return Math.min(360, vw() * 0.9); };
+  var startH = 462;
+  var raf = null;
+
+  var apply = function () {
+    raf = null;
+    var p = clamp((window.scrollY || 0) / EXTRA, 0, 1);
+    var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+    var w = startW() + e * (vw() - startW());
+    var h = startH + e * (vh() - startH);
+    media.style.width = w + 'px';
+    media.style.height = h + 'px';
+    media.style.borderRadius = (28 * (1 - e)) + 'px';
+    media.style.borderColor = 'rgba(232,226,216,' + (1 - e) + ')';
+    if (e > 0.6) media.style.maxWidth = 'none';
+    bg.style.opacity = String(1 - e * 0.9);
+    scrim.style.opacity = String(0.06 + e * 0.32);
+    var off = w / 2 + 26;
+    titleL.style.transform = 'translate(calc(-50% - ' + off + 'px), -50%)';
+    titleL.style.opacity = String(clamp(1 - e * 1.35, 0, 1));
+    titleL.style.color = e > 0.55 ? '#eef2ee' : '#1f2a33';
+    titleR.style.transform = 'translate(calc(-50% + ' + off + 'px), -50%)';
+    titleR.style.opacity = String(clamp(1 - e * 1.35, 0, 1));
+    titleR.style.color = e > 0.55 ? '#eef2ee' : '#1f2a33';
+    hint.style.opacity = String(clamp(1 - p * 3, 0, 1));
+    var hp = clamp((p - 0.82) / 0.18, 0, 1);
+    hero.style.opacity = String(hp);
+    hero.style.pointerEvents = hp > 0.5 ? 'auto' : 'none';
+    hero.style.transform = 'translateY(' + ((1 - hp) * 18) + 'px)';
+  };
+  var onScroll = function () { if (raf == null) raf = requestAnimationFrame(apply); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  apply();
+})();
+</script>
+</body>
+</html>
