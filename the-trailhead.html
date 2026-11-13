@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<style>@media (max-width:760px){.hero-grid{grid-template-columns:1fr !important;gap:28px !important}}</style>
 </head>
 <body>
 
@@ -20,8 +21,7 @@
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a class="active" href="the-trailhead.html">The Trailhead</a>
-        <a href="base-camp.html">Base Camp</a>
-        <a href="the-summit.html">The Summit</a>
+        <a href="the-trailhead.html#colleges">For colleges</a>
         <a href="about.html">About</a>
         <a class="btn btn-primary btn-sm" href="book-a-call.html">Book a call</a>
       </div>
@@ -34,7 +34,7 @@
       <div class="reveal">
         <div class="badge">The Trailhead · 2,860m · Campus to corporate</div>
         <h1 class="h1">The corporate world<br><span class="accent">has no syllabus.</span></h1>
-        <p class="lead" style="max-width:480px;margin:1.5rem 0 2rem">Your degree taught you the subject. Nobody taught you the job: how to speak up in a room of seniors, manage your manager, own your work, and stand out early. The Trailhead is where the climb to leadership actually starts — before your first day, not after your first stumble.</p>
+        <p class="lead" style="max-width:480px;margin:1.5rem 0 2rem">Your degree taught you the subject. Nobody taught you the job: how to speak up in a room of seniors, manage your manager, own your work, and stand out early. The Trailhead is where the climb actually starts — before your first day, not after your first stumble.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="book-a-call.html">Book a call</a>
           <a class="btn btn-ghost" href="#legs">What's covered</a>
@@ -80,10 +80,6 @@
           <h3>The college or placement cell</h3>
           <p>Your students are academically strong but employers keep saying "not workplace-ready." We run The Trailhead as a cohort on campus — practical, measurable, and shaped to the industries your students enter.</p>
         </div>
-      </div>
-      <div class="fit-not reveal">
-        <span><b style="color:var(--ink)">Already working and eyeing your first leadership role?</b></span>
-        <a href="base-camp.html">Base Camp is your route →</a>
       </div>
     </div>
   </section>
@@ -216,8 +212,39 @@
     </div>
   </section>
 
+  <!-- ============ FOR COLLEGES ============ -->
+  <section id="colleges" class="sec" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="reveal" style="max-width:680px;margin-bottom:2.6rem">
+        <div class="kick">For colleges &amp; placement cells</div>
+        <h2 class="h2">How it runs on your campus.</h2>
+        <p class="lead" style="margin:1.2rem 0 0">Your students are academically strong. The Trailhead adds what employers say is missing — and it's built around the roles and industries your batch is heading into.</p>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-card reveal">
+          <h3>Before: shaped to your batch</h3>
+          <p>We start with a call with your placement cell: who your students are and where they get hired. Optional pre-learning can begin a few weeks ahead of the session.</p>
+        </div>
+        <div class="fit-card reveal">
+          <h3>On campus: practice, not lectures</h3>
+          <p>A full day, or several days, depending on the program. In person is recommended; online is available. Facilitation is planned around the size of your batch.</p>
+        </div>
+        <div class="fit-card reveal">
+          <h3>After: something to show</h3>
+          <p>Every student has been through a scored mock interview and leaves with a written first-90-days plan — evidence they can carry into placements.</p>
+        </div>
+      </div>
+      <div class="reveal cta-band" style="padding-top:2.6rem">
+        <div>
+          <h2 class="h2" style="max-width:520px;font-size:clamp(1.5rem,3vw,2.1rem)">Planning placement season?</h2>
+        </div>
+        <a class="btn btn-primary" href="book-a-call.html" style="flex:none">Talk about your campus</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ THE GUIDE (slim) ============ -->
-  <section class="sec-tight" style="background:var(--cream)">
+  <section class="sec-tight bordered-top" style="background:var(--cream)">
     <div class="wrap">
       <div class="guide-bar reveal">
         <div class="guide-mono">YT</div>
@@ -227,7 +254,7 @@
     </div>
   </section>
 
-  <!-- ============ NEXT CAMP + CTA ============ -->
+  <!-- ============ CTA ============ -->
   <section class="sec-tight bordered-top" style="background:var(--cream);padding-bottom:6rem">
     <div class="wrap">
       <div class="reveal cta-band" style="padding-top:1.5rem">
@@ -237,22 +264,17 @@
         </div>
         <a class="btn btn-primary" href="book-a-call.html" style="flex:none">Book a call</a>
       </div>
-      <a href="base-camp.html" class="next-card reveal">
-        <span style="display:flex;flex-direction:column;gap:2px"><span class="next-kick">Next camp · 5,364m</span><span class="next-name">Base Camp →</span></span>
-        <svg width="40" height="28" viewBox="0 0 40 28"><polyline points="2,24 12,16 22,18 32,6 38,10" fill="none" stroke="#d96f32" stroke-width="2" stroke-linecap="round"></polyline><circle cx="38" cy="10" r="3" fill="#d96f32"></circle></svg>
-      </a>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="wrap">
-      <div class="footer-tag">Leadership development, taught like a climb.</div>
+      <div class="footer-tag">Campus to corporate, taught like a climb.</div>
       <div class="footer-row">
         <div class="footer-links">
           <a href="the-trailhead.html">The Trailhead</a>
-          <a href="base-camp.html">Base Camp</a>
-          <a href="the-summit.html">The Summit</a>
+        <a href="the-trailhead.html#colleges">For colleges</a>
           <a href="about.html">About</a>
           <a href="book-a-call.html">Book a call</a>
         </div>

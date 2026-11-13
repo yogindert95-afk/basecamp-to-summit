@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#faf7f1">
 <title>Book a call | Base Camp to Summit</title>
-<meta name="description" content="A 30-minute conversation — where you are, where you want to lead, and which climb fits.">
+<meta name="description" content="A 30-minute conversation for students, graduates, and colleges — where you are and whether The Trailhead fits.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,8 +20,7 @@
       <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="the-trailhead.html">The Trailhead</a>
-        <a href="base-camp.html">Base Camp</a>
-        <a href="the-summit.html">The Summit</a>
+        <a href="the-trailhead.html#colleges">For colleges</a>
         <a href="about.html">About</a>
       </div>
     </div>
@@ -33,26 +32,25 @@
       <div>
         <div class="kick" style="margin-bottom:1.1rem">The route starts here</div>
         <h1 class="h1" style="font-size:clamp(2.2rem,4.4vw,3.4rem)">Book a call.</h1>
-        <p class="lead" style="max-width:400px;margin:1.4rem 0 0">A 30-minute conversation — where you are, where you want to lead, and which climb fits. No slides, no pressure.</p>
+        <p class="lead" style="max-width:400px;margin:1.4rem 0 0">A 30-minute conversation — where you are, where you want to get to, and whether The Trailhead fits. No slides, no pressure.</p>
         <div style="margin-top:2.2rem;display:flex;flex-direction:column;gap:.9rem">
           <div style="display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--slate)"><span style="color:var(--rust)">▲</span> You'll hear back within one working day.</div>
-          <div style="display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--slate)"><span style="color:var(--rust)">▲</span> Individuals, teams, and whole organisations welcome.</div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--slate)"><span style="color:var(--rust)">▲</span> Students, graduates, and colleges welcome.</div>
         </div>
       </div>
 
       <div style="background:#fff;border:1px solid var(--line);border-radius:28px;padding:2.2rem">
         <div style="font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.7rem">Where are you on the climb?</div>
         <div id="personas" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.4rem">
-          <button type="button" class="persona-chip on" data-p="Student / getting into corporate">Getting into corporate</button>
-          <button type="button" class="persona-chip" data-p="Aspiring or new manager">Aspiring / new manager</button>
-          <button type="button" class="persona-chip" data-p="Senior leader">Senior leader</button>
-          <button type="button" class="persona-chip" data-p="Building leaders in my organisation">My organisation</button>
+          <button type="button" class="persona-chip on" data-p="Final-year student">Final-year student</button>
+          <button type="button" class="persona-chip" data-p="Fresh graduate">Fresh graduate</button>
+          <button type="button" class="persona-chip" data-p="College / placement cell">College / placement cell</button>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px" class="name-row">
           <input id="f-name" placeholder="Your name" autocomplete="name">
           <input id="f-email" placeholder="Email" type="email" autocomplete="email">
         </div>
-        <input id="f-org" placeholder="Organisation (optional)" style="margin-bottom:12px">
+        <input id="f-org" placeholder="College or organisation (optional)" style="margin-bottom:12px">
         <textarea id="f-msg" placeholder="What would you like to work on?" rows="4" style="resize:vertical;margin-bottom:1.2rem"></textarea>
         <button id="f-submit" class="btn btn-primary" type="button">Request the call</button>
         <p id="f-sent" style="display:none;font-size:.92rem;color:#2e7d4f;margin:1rem 0 0">Your email app should have opened with the details — just hit send.</p>
@@ -66,8 +64,7 @@
     <div class="wrap footer-row" style="border-top:none;padding-top:0;align-items:center">
       <div class="footer-links">
         <a href="the-trailhead.html">The Trailhead</a>
-        <a href="base-camp.html">Base Camp</a>
-        <a href="the-summit.html">The Summit</a>
+        <a href="the-trailhead.html#colleges">For colleges</a>
         <a href="about.html">About</a>
       </div>
       <div class="footer-copy">© 2026 Base Camp to Summit</div>
@@ -88,7 +85,7 @@
   mail.textContent = CONTACT_EMAIL;
   mail.href = 'mailto:' + CONTACT_EMAIL;
 
-  var persona = 'Student / getting into corporate';
+  var persona = 'Final-year student';
   var chips = document.querySelectorAll('.persona-chip');
   chips.forEach(function (c) {
     c.addEventListener('click', function () {
